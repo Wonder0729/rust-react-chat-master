@@ -45,8 +45,6 @@ async fn main() -> std::io::Result<()> {
             .service(web::resource("/").to(routes::index))
             .route("/ws", web::get().to(routes::chat_server))
             .service(routes::create_user)
-            .service(routes::get_user_by_id)
-            .service(routes::get_user_by_phone)
             .service(routes::get_conversation_by_id)
             .service(routes::get_rooms)
             .service(Files::new("/", "./static"))
